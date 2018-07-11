@@ -157,6 +157,9 @@ button.btn {
 .section {
   padding: 200px 0 250px;
 }
+.section-md {
+  padding: 50px 0;
+}
 .contact-section {
   /* background: #fff; */
   height: 600px;
