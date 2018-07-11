@@ -16,6 +16,7 @@ h2 span {
 }
 a { 
   text-decoration: none;
+  color: #1b253a;
 }
 h1 a {
   color: #1b253a;
@@ -284,6 +285,26 @@ button.btn {
 }
 .award-img:hover {
   border: 1px solid #8b9aab;
+}
+.wip-project {
+  box-shadow: 0 7px 24px rgba(50,50,93,.05), 0 3px 16px rgba(0,0,0,.04);
+  margin: 15px;
+  padding: 15px 15px 20px;
+  background: #fff;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+.wip-project .progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 10px;
+  background: #25eb7e;
+  font-size: 10px;
+  color: #1bb35f;
+  text-align: right;
+  padding-right: 5px;
 }
 .contact-form {
   box-shadow: 0 7px 24px rgba(50,50,93,.05), 0 3px 16px rgba(0,0,0,.04);
