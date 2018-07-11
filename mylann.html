@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>I'm Hein</title>
+  <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,700,700italic"> -->
+  <link href="https://fonts.googleapis.com/css?family=Overpass:400,900" rel="stylesheet">
+  <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/flexboxgrid/6.3.1/flexboxgrid.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/jam-icons@2.0.0/css/jam.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="project">
+  <div class="header">
+    <div class="container">
+      <h1 class="logo"><a href="/index.html">hein</a></h1>
+    </div>
+  </div>
+  
+
+  <div class="container">
+    <div class="masthead resume-masthead">
+      <div class="row middle-lg middle-md middle-sm middle-xs">
+        <div class="col-md-6 col-sm-12 col-xs-12">
+          <h1 class="section-title">My Lann <span class="tagline">- Discover your next delicious experience</span></h1>
+          <div class="platforms" data-aos="fade-up" data-aos-delay="20">
+            <span class="jam jam-apple"></span>
+            <span class="jam jam-android"></span>
+            <span class="jam jam-computer-alt"></span>
+          </div>
+        </div>
+        <div class="col-md-offset-1 col-md-5 col-sm-12 col-xs-12">
+          <h4><small>Launching in</small></h4>
+          <div id="countdown"></div>
+        </div>
+      </div>        
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; Hein, forever.
+  </div>
+
+  <script>
+
+    CountDownTimer('08/10/2018 12:00 AM', 'countdown');
+
+    function CountDownTimer(dt, id)
+    {
+        var end = new Date(dt);
+
+        var _second = 1000;
+        var _minute = _second * 60;
+        var _hour = _minute * 60;
+        var _day = _hour * 24;
+        var timer;
+
+        function showRemaining() {
+            var now = new Date();
+            var distance = end - now;
+            if (distance < 0) {
+
+                clearInterval(timer);
+                document.getElementById(id).innerHTML = 'EXPIRED!';
+
+                return;
+            }
+            var days = Math.floor(distance / _day);
+            var hours = Math.floor((distance % _day) / _hour);
+            var minutes = Math.floor((distance % _hour) / _minute);
+            var seconds = Math.floor((distance % _minute) / _second);
+
+            document.getElementById(id).innerHTML = '<div>' + days + '<span>days</span> </div>';
+            document.getElementById(id).innerHTML += '<div>' + hours + '<span>hrs</span> </div>';
+            document.getElementById(id).innerHTML += '<div>' + minutes + '<span>mins</span></div>';
+        }
+
+        timer = setInterval(showRemaining, 1000);
+    }
+
+</script>
+</body>
+</html>
