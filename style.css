@@ -56,6 +56,10 @@ input, textarea {
 :-moz-placeholder { /* Firefox 18- */
   color: #8b9aab;
 }
+.wrap { 
+  max-width: 100%;
+  overflow: hidden;
+}
 .inline-list li {
   margin-right: 8px;
   display: inline-block;
@@ -353,6 +357,9 @@ button.btn {
   font-size: 16px;
   display: block;
   color: #8b9aab;
+}
+.desc {
+  margin: 30px;
 }
 @media only screen and (max-width: 48em) {
   .masthead {
