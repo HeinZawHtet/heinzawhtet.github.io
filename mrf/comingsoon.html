@@ -13,12 +13,14 @@
       * {
         box-sizing: border-box;
       }
+      html, body {
+        overflow-x: hidden;
+      }
       body {
         margin: 0;
         padding: 0;
         font-family: 'Overpass', sans-serif;
-        overflow-x: hidden;
-        background-color: #f9fafc;
+        background-color: #eef1f7;
         font-size: 14px;
         color: #7b7c8f;
         position: relative;
@@ -63,7 +65,8 @@
         border-bottom-left-radius: 200px;
         border-bottom-right-radius: 200px;
         overflow: hidden;
-        background-color: #fff;
+        background: #fff;
+        background: linear-gradient(0, rgba(255,255,255,1) 40%, rgba(0,0,0,0) 60%);
         transform: rotate(65deg);
         position: absolute;
         left: -500px;
@@ -93,8 +96,8 @@
         right: -300px;
         top: -400px;
         z-index: -9998;
-        /* box-shadow: 0 2.8px 5.3px rgba(0, 0, 0, 0.028), */
-        /* 0 9.4px 17.9px rgba(0, 0, 0, 0.042), 0 42px 80px rgba(0, 0, 0, 0.07); */
+        box-shadow: 0 2.8px 5.3px rgba(0, 0, 0, 0.008),
+          0 9.4px 17.9px rgba(0, 0, 0, 0.012), 0 42px 80px rgba(0, 0, 0, 0.02);
       }
       .cover-img {
         background-image: url('img/cover.jpg');
@@ -344,7 +347,7 @@
             </div>
           </div>
           <div class="credit-text">
-            <p>Developed by Greenway</p>
+            <p>Developed by Greenovator</p>
             <p class="muted">
               Idea designed by: Ekanath Khatiwada, Seed Sector Business Advisor,
               RSSD project
