@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Seedbank by Myanmar Rice Federation</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Overpass|Playfair+Display:900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Overpass', sans-serif;
+        overflow-x: hidden;
+        background-color: #f9fafc;
+        font-size: 14px;
+        color: #7b7c8f;
+        position: relative;
+        /* max-width: 100%; */
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        color: #3a3b5a;
+      }
+      .muted {
+        font-size: 12px;
+        opacity: 0.5;
+      }
+      .container {
+        max-width: 1200px;
+        padding: 15px;
+        margin: 0 auto;
+      }
+      .container-fluid {
+        padding: 15px;
+      }
+      .row {
+        display: flex;
+      }
+      .col {
+        flex: 1;
+        width: 50%;
+      }
+      .serif {
+        font-family: 'Playfair Display', serif;
+        font-weight: 900;
+      }
+      .left-bg {
+        width: 1600px;
+        height: 1600px;
+        border-bottom-left-radius: 200px;
+        border-bottom-right-radius: 200px;
+        overflow: hidden;
+        background-color: #fff;
+        transform: rotate(65deg);
+        position: absolute;
+        left: -500px;
+        top: -900px;
+        z-index: -9999;
+        box-shadow: 0 2.8px 5.3px rgba(0, 0, 0, 0.008),
+          0 9.4px 17.9px rgba(0, 0, 0, 0.012), 0 42px 80px rgba(0, 0, 0, 0.02);
+      }
+      .info {
+        margin: 30px 0 0 auto;
+        max-width: 600px;
+        margin-left: 100px;
+      }
+      .logo {
+        width: 100px;
+      }
+      .cover {
+        width: 1200px;
+        height: 800px;
+        border-bottom-left-radius: 200px;
+        border-bottom-right-radius: 200px;
+        overflow: hidden;
+        background-color: #000;
+        transform: rotate(65deg);
+        position: absolute;
+        /* right: -80px; */
+        right: -300px;
+        top: -400px;
+        z-index: -9998;
+        /* box-shadow: 0 2.8px 5.3px rgba(0, 0, 0, 0.028), */
+        /* 0 9.4px 17.9px rgba(0, 0, 0, 0.042), 0 42px 80px rgba(0, 0, 0, 0.07); */
+      }
+      .cover-img {
+        background-image: url('img/cover.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 1200px;
+        height: 1200px;
+        transform: rotate(-65deg);
+        position: absolute;
+        /* left: -200px; */
+        /* top: -200px; */
+      }
+      .coming-soon-text {
+        font-size: 100px;
+        line-height: 80px;
+        margin-bottom: 40px;
+      }
+      .coming-soon-desc {
+        position: relative;
+      }
+      .coming-soon-desc p {
+        font-size: 22px;
+      }
+      .dot-seperator:before {
+        content: ' ';
+        display: block;
+        width: 10px;
+        height: 10px;
+        background-color: #e38c2f;
+        border-radius: 5px;
+      }
+      .form {
+        display: flex;
+        /* box-shadow: 0 1.8px 2.2px -46px rgba(0, 0, 0, 0.02),
+          0 4.3px 5.3px -46px rgba(0, 0, 0, 0.028),
+          0 8.1px 10px -46px rgba(0, 0, 0, 0.035),
+          0 14.5px 17.9px -46px rgba(0, 0, 0, 0.042),
+          0 27.2px 33.4px -46px rgba(0, 0, 0, 0.05),
+          0 65px 80px -46px rgba(0, 0, 0, 0.07); */
+      }
+      .form-input {
+        /* border: 1px solid #dee6ed; */
+        height: 50px;
+        border-radius: 25px;
+        margin-right: 8px;
+        box-shadow: 0 2.8px 5.3px rgba(0, 0, 0, 0.028),
+          0 9.4px 17.9px rgba(0, 0, 0, 0.042), 0 42px 80px rgba(0, 0, 0, 0.07);
+      }
+      .form-input input {
+        font-family: 'Overpass', sans-serif;
+        color: #000;
+        width: 300px;
+        border: none;
+        height: 100%;
+        background: transparent;
+        font-size: 18px;
+        padding-left: 15px;
+      }
+      input::placeholder {
+        color: #a7bacb;
+      }
+      .form-input input:focus {
+        outline: none;
+      }
+      .form-btn {
+        border: none;
+        background: #3eb44a;
+        color: #fff;
+        font-family: 'Overpass', sans-serif;
+        width: 90px;
+        font-size: 18px;
+        border-radius: 25px;
+        box-shadow: 0 2.8px 5.3px rgba(0, 0, 0, 0.028),
+          0 9.4px 17.9px rgba(0, 0, 0, 0.042), 0 42px 80px rgba(0, 0, 0, 0.07);
+        cursor: pointer;
+      }
+      .credit-text {
+        margin: 0 auto;
+        max-width: 300px;
+        text-align: center;
+      }
+      .credit-text p {
+        /* max-width: 400px; */
+        /* text-transform: uppercase; */
+      }
+      .credit-logos {
+        margin: 30px auto;
+        /* margin-top: 120px; */
+        /* max-width: 600px; */
+      }
+      .credit-logo {
+        background-color: #fff;
+        /* box-shadow: 0 2.8px 5.3px rgba(0, 0, 0, 0.008),
+          0 9.4px 17.9px rgba(0, 0, 0, 0.012), 0 42px 80px rgba(0, 0, 0, 0.02); */
+        margin: 10px;
+        box-shadow: 0 30px 40px 0 rgba(212, 217, 232, 0.2);
+        border-radius: 16px;
+        height: 100px;
+        width: 200px;
+        padding: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .credit-logo.sm {
+        max-width: 100px;
+        height: 70px;
+      }
+      .credit-logo img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .logo-group {
+        display: flex;
+        justify-content: center;
+      }
+
+      @media (max-width: 992px) {
+        .left-bg {
+          left: -800px;
+          top: -1000px;
+          transform: rotate(60deg);
+          /* max-width: 100%; */
+        }
+        .info {
+          text-align: center;
+          margin-left: 0;
+        }
+        .cover {
+          position: relative;
+          left: 0;
+          right: 0;
+          top: 0;
+          transform: rotate(0);
+          border-radius: 0;
+          height: 50px;
+          overflow: hidden;
+        }
+        .cover-img {
+          transform: rotate(0);
+          max-width: 100%;
+        }
+        .coming-soon-text {
+          font-size: 60px;
+          line-height: 40px;
+        }
+        .coming-soon-desc p {
+          font-size: 16px;
+        }
+        .form {
+          margin-top: 40px;
+          justify-content: center;
+        }
+        .form-input input {
+          width: 200px;
+        }
+        .dot-seperator:before {
+          position: absolute;
+          left: 50%;
+          margin-left: -5px;
+          top: -20px;
+        }
+        .credit-logo {
+          margin: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="left-bg"></div>
+    <div class="cover"><div class="cover-img"></div></div>
+    <div class="container-fluid">
+      <div class="info">
+        <img src="img/primary-logo.png" class="logo" />
+        <h1 class="coming-soon-text serif">coming<br />soon</h1>
+        <div class="coming-soon-desc dot-seperator">
+          <p>
+            We are building a unique platform <br />for rice business
+            development.
+          </p>
+        </div>
+        <div class="form">
+          <div class="form-input">
+            <input placeholder="Your Email" />
+          </div>
+          <button class="form-btn">Submit</button>
+        </div>
+      </div>
+    </div>
+    <div class="container" style="margin-top: 120px;">
+      <div class="row">
+        <!-- <div class="col" style="display: flex; align-items: center;"></div> -->
+        <div class="col">
+          <div class="credit-text">
+            <h2 class="serif">credits</h2>
+            <p>
+              This project is designed in close collaboration with MRF and WHH,
+              and funded by LIFT.
+            </p>
+          </div>
+          <div class="credit-logos">
+            <div class="logo-group">
+              <div class="credit-logo">
+                <img src="img/mrf-credit-logo.jpg" />
+              </div>
+              <div class="credit-logo">
+                <img src="img//whh-credit-logo.jpg" />
+              </div>
+              <div class="credit-logo">
+                <img src="img/lift-credit-logo.jpg" />
+              </div>
+            </div>
+            <!-- <div class="logo-group">
+              <div class="credit-logo">
+                <img src="img/lift-credit-logo.jpg" />
+              </div>
+            </div> -->
+            <div class="credit-text">
+              <p>
+                LIFT is funded by
+              </p>
+            </div>
+            <div class="logo-group">
+              <div class="credit-logo sm">
+                <img src="img/uk-aid-credit-logo.jpg" />
+              </div>
+              <div class="credit-logo sm">
+                <img src="img/eu-credit-logo.jpg" />
+              </div>
+              <div class="credit-logo sm">
+                <img src="img/ausaid-credit-logo.jpg" />
+              </div>
+              <div class="credit-logo sm">
+                <img src="img/schweizerische-credit-logo.jpg" />
+              </div>
+            </div>
+            <div class="logo-group">
+              <div class="credit-logo sm">
+                <img src="img/usaid.jpg" />
+              </div>
+              <div class="credit-logo sm">
+                <img src="img/canada-credit-logo.jpg" />
+              </div>
+              <div class="credit-logo sm">
+                <img src="img/irish-aid-credit-logo.jpg" />
+              </div>
+            </div>
+          </div>
+          <div class="credit-text">
+            <p>Developed by the Greenway</p>
+            <p class="muted">
+              Idea designed by: Ekanath Khatiwada, Seed Sector Business Advisor,
+              RSSD project
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
