@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getMobileOperatingSystem() {
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+        if (
+          userAgent.match(/iPad/i) ||
+          userAgent.match(/iPhone/i) ||
+          userAgent.match(/iPod/i)
+        ) {
+          return 'iOS';
+        } else if (userAgent.match(/Android/i)) {
+          return 'Android';
+        } else {
+          return 'unknown';
+        }
+      }
+
+      function onLoad() {
+        setTimeout(function () {
+          window.location = 'https://www.facebook.com/Sakura-109841271766469/';
+        }, 3000);
+        switch (getMobileOperatingSystem()) {
+          case 'Android':
+            window.location = 'fb://profile/109841271766469';
+            break;
+          case 'iOS':
+            window.location = 'fb://page/109841271766469';
+            break;
+          default:
+            window.location =
+              'https://www.facebook.com/Sakura-109841271766469/';
+            break;
+        }
+      }
+      window.onload = onLoad;
+    </script>
+  </body>
+</html>
